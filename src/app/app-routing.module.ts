@@ -8,6 +8,7 @@ import { LkgMenuComponent } from './lkg/lkg-menu.component';
 import { LkgEnglishGameComponent } from './lkg/lkg-english-game.component';
 import { UkgMenuComponent } from './ukg/ukg-menu.component';
 import { UkgEnglishGameComponent } from './ukg/ukg-english-game.component';
+import { BobbleGameComponent } from './ukg/bobble-game.component';
 import { SpellGameComponent } from './games/spell-game.component';
 import { IdentifyGameComponent } from './games/identify-game.component';
 import { VowelGameComponent } from './games/vowel-game.component';
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'lkg-english', component: LkgEnglishGameComponent },
   { path: 'ukg', component: UkgMenuComponent },
   { path: 'ukg-english', component: UkgEnglishGameComponent },
+  { path: 'bobble', component: BobbleGameComponent },
   { path: 'spell', component: SpellGameComponent },
   { path: 'identify', component: IdentifyGameComponent },
   { path: 'vowel', component: VowelGameComponent },

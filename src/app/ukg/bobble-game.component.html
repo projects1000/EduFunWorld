@@ -1,0 +1,9 @@
+<div class="bobble-game-container">
+  <button *ngIf="!gameActive" (click)="startGame()" class="start-btn">Start</button>
+  <button *ngIf="gameActive" (click)="stopGame()" class="stop-btn">Stop</button>
+  <button routerLink="/ukg" class="back-btn">&#8592; Return Back</button>
+  <div class="instruction-text swing">Click the VOWELS</div>
+  <div class="balloon" *ngFor="let balloon of balloons" [ngStyle]="{top: balloon.top + '%', left: balloon.left + '%', opacity: balloon.burst ? 0.2 : 1}" (click)="clickBalloon(balloon)">
+    {{ balloon.letter }}
+  </div>
+</div>
