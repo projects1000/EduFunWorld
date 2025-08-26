@@ -1,0 +1,6 @@
+<div class="puzzle-container">
+  <h3>UKG Puzzle</h3>
+  <button class="game-btn" (click)="openBobble()">Bobble</button>
+  <app-bobble-game *ngIf="showBobble"></app-bobble-game>
+  <button *ngIf="showBobble" class="game-btn" (click)="closeBobble()" style="margin-top:16px;">Close Bobble</button>
+</div>

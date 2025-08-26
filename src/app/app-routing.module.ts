@@ -9,6 +9,7 @@ import { LkgEnglishGameComponent } from './lkg/lkg-english-game.component';
 import { UkgMenuComponent } from './ukg/ukg-menu.component';
 import { UkgEnglishGameComponent } from './ukg/ukg-english-game.component';
 import { BobbleGameComponent } from './ukg/bobble-game.component';
+import { UkgPuzzleComponent } from './ukg/ukg-puzzle.component';
 import { SpellGameComponent } from './games/spell-game.component';
 import { IdentifyGameComponent } from './games/identify-game.component';
 import { VowelGameComponent } from './games/vowel-game.component';

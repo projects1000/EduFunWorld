@@ -4,10 +4,11 @@ import { RouterModule } from '@angular/router';
 import { UkgMenuComponent } from './ukg-menu.component';
 import { UkgEnglishGameComponent } from './ukg-english-game.component';
 import { BobbleGameComponent } from './bobble-game.component';
+import { UkgPuzzleComponent } from './ukg-puzzle.component';
 
 @NgModule({
-  declarations: [UkgMenuComponent, UkgEnglishGameComponent, BobbleGameComponent],
+  declarations: [UkgMenuComponent, UkgEnglishGameComponent, BobbleGameComponent, UkgPuzzleComponent],
   imports: [CommonModule, RouterModule],
-  exports: [UkgMenuComponent, UkgEnglishGameComponent, BobbleGameComponent, RouterModule]
+  exports: [UkgMenuComponent, UkgEnglishGameComponent, BobbleGameComponent, UkgPuzzleComponent, RouterModule]
 })
 export class UkgModule {}

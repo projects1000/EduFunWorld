@@ -1,0 +1,14 @@
+.puzzle-container {
+  padding: 32px;
+  text-align: center;
+}
+.game-btn {
+  margin: 12px;
+  padding: 10px 32px;
+  font-size: 22px;
+  border-radius: 24px;
+  background: #b71c1c;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}

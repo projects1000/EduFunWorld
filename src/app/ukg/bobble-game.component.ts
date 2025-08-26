@@ -17,9 +17,11 @@ export class BobbleGameComponent {
   intervalId: any;
   vowels = ['A', 'E', 'I', 'O', 'U'];
   gameActive = false;
+  showCongrats = false;
 
   startGame() {
     this.gameActive = true;
+    this.showCongrats = false;
     this.balloons = this.generateBalloons();
     this.intervalId = setInterval(() => this.moveBalloons(), 100); // slower
   }
@@ -58,8 +60,18 @@ export class BobbleGameComponent {
   }
 
   clickBalloon(balloon: Balloon) {
-    if (this.vowels.includes(balloon.letter)) {
+    if (this.vowels.includes(balloon.letter) && !balloon.burst) {
       balloon.burst = true;
+      // Check if all vowels are burst
+      const allVowelsBurst = this.balloons.filter(b => this.vowels.includes(b.letter)).every(b => b.burst);
+      if (allVowelsBurst) {
+        this.showCongrats = true;
+        this.stopGame();
+      }
     }
+  }
+
+  get allVowelsBurst(): boolean {
+    return this.balloons.filter(b => this.vowels.includes(b.letter)).every(b => b.burst);
   }
 }

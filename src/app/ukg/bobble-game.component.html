@@ -1,9 +1,16 @@
 <div class="bobble-game-container">
-  <button *ngIf="!gameActive" (click)="startGame()" class="start-btn">Start</button>
-  <button *ngIf="gameActive" (click)="stopGame()" class="stop-btn">Stop</button>
-  <button routerLink="/ukg" class="back-btn">&#8592; Return Back</button>
+  <div class="top-bar">
+    <button *ngIf="!gameActive && !showCongrats" (click)="startGame()" class="start-btn center-btn">Start</button>
+  <button routerLink="/ukg" class="back-btn"><span class="arrow-icon">&#x2190;</span></button>
+  </div>
   <div class="instruction-text swing">Click the VOWELS</div>
   <div class="balloon" *ngFor="let balloon of balloons" [ngStyle]="{top: balloon.top + '%', left: balloon.left + '%', opacity: balloon.burst ? 0.2 : 1}" (click)="clickBalloon(balloon)">
     {{ balloon.letter }}
+  </div>
+  <div *ngIf="showCongrats" class="restart-congrats-wrapper">
+    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
+      <button (click)="startGame()" class="start-btn center-btn" style="margin-bottom:32px;">Restart</button>
+      <div class="congrats-text">Good Job</div>
+    </div>
   </div>
 </div>
