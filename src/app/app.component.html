@@ -5,5 +5,11 @@
 	</button>
 </div>
 
+
+<div *ngIf="updateAvailable" style="position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#111;color:#fff;padding:16px 32px;border-radius:24px;z-index:999;box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+	<span>A new update is available.</span>
+	<button (click)="updateApp()" style="margin-left:16px;padding:8px 24px;font-size:16px;border-radius:24px;background:#b71c1c;color:#fff;border:none;cursor:pointer;">Update</button>
+</div>
+
 <router-outlet></router-outlet>
 

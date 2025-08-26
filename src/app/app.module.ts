@@ -8,7 +8,9 @@ import { NurseryModule } from './nursery/nursery.module';
 import { LkgModule } from './lkg/lkg.module';
 import { UkgModule } from './ukg/ukg.module';
 import { AppRoutingModule } from './app-routing.module';
+import { RouterModule } from '@angular/router';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { SwUpdate } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     NurseryModule,
     LkgModule,
     UkgModule,
-    AppRoutingModule,
+  AppRoutingModule,
+  RouterModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),
       // Register the ServiceWorker as soon as the application is stable
@@ -30,7 +33,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
       registrationStrategy: 'registerWhenStable:30000'
     })
   ],
-  providers: [],
+  providers: [SwUpdate],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

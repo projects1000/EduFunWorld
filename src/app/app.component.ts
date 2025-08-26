@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SwUpdate } from '@angular/service-worker';
 
 @Component({
   selector: 'app-root',
@@ -11,13 +12,22 @@ export class AppComponent {
 
   deferredPrompt: any = null;
   showInstallButton = false;
+  updateAvailable = false;
 
-  constructor() {
+  constructor(private swUpdate: SwUpdate) {
     window.addEventListener('beforeinstallprompt', (e: any) => {
       e.preventDefault();
       this.deferredPrompt = e;
       this.showInstallButton = true;
     });
+
+    if (swUpdate.isEnabled) {
+      swUpdate.versionUpdates.subscribe((event: any) => {
+        if (event.type === 'VERSION_READY') {
+          this.updateAvailable = true;
+        }
+      });
+    }
   }
 
   startGame() {
@@ -34,5 +44,9 @@ export class AppComponent {
         this.deferredPrompt = null;
       });
     }
+  }
+
+  updateApp() {
+    window.location.reload();
   }
 }
