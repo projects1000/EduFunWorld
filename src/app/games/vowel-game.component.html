@@ -1,0 +1,20 @@
+<div class="vowel-game-container">
+  <h2>Select the Vowels!</h2>
+  <div class="letters">
+    <button *ngFor="let letter of letters" 
+            [disabled]="selected.includes(letter) || finished"
+            (click)="selectLetter(letter)"
+            [ngClass]="{
+              'vowel': vowels.includes(letter),
+              'selected': selected.includes(letter),
+              'correct': selected.includes(letter) && vowels.includes(letter),
+              'wrong': selected.includes(letter) && !vowels.includes(letter)
+            }">
+      {{ letter }}
+    </button>
+  </div>
+  <div class="score" *ngIf="finished">
+    <p>You found {{ score }} vowels!</p>
+    <button class="next-btn" (click)="nextGame()">Next Game</button>
+  </div>
+</div>

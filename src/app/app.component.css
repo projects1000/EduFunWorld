@@ -1,0 +1,45 @@
+.game-container {
+  max-width: 95vw;
+  margin: 8vw auto;
+  padding: 6vw;
+  background: #f7fafd;
+  border-radius: 4vw;
+  box-shadow: 0 2vw 8vw rgba(0,0,0,0.08);
+  text-align: center;
+}
+.game-title {
+  color: #0081a7;
+  margin-bottom: 6vw;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+.game-desc {
+  color: #00afb9;
+  margin-bottom: 4vw;
+  font-size: 1.2rem;
+}
+.game-btn {
+  background: linear-gradient(90deg, #0081a7 0%, #00afb9 100%);
+  color: #fff;
+  border: none;
+  padding: 3vw 10vw;
+  border-radius: 2vw;
+  font-size: 1.2rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+.game-btn:hover {
+  background: linear-gradient(90deg, #00afb9 0%, #0081a7 100%);
+}
+@media (max-width: 600px) {
+  .game-container {
+    padding: 8vw 2vw;
+  }
+  .game-title {
+    font-size: 1.5rem;
+  }
+  .game-btn {
+    font-size: 1rem;
+    padding: 4vw 12vw;
+  }
+}
